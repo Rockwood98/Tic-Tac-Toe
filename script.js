@@ -142,6 +142,7 @@ const gameAgain = () => {
   }
 };
 const gameReset = () => {
+  turn = 0;
   gameAgain();
   playerScore = 0;
   cpuScore = 0;
