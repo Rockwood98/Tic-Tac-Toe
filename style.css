@@ -130,6 +130,7 @@ body {
   }
   .scores {
     font-size: 1.7rem;
+    margin-top: 0.1rem;
   }
   .btn {
     font-size: 1.8rem;
