@@ -83,7 +83,7 @@ const showOverlay = (player = 'Nobody') => {
 const addSymbol = place => {
   const htmlX = `<span class="span span-x"><i class="fa-solid fa-xmark"></i></span>`;
   const htmlO = `<span class="span span-o"><i class="fa-solid fa-o"></i></span>`;
-  if (symbol) {
+  if (!symbol) {
     place.insertAdjacentHTML('beforeend', htmlX);
   } else {
     place.insertAdjacentHTML('beforeend', htmlO);

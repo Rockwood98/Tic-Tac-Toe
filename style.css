@@ -39,8 +39,16 @@ body {
   cursor: pointer;
 }
 .title {
-  margin-bottom: 2rem;
   font-size: 3.2rem;
+}
+.starts-score {
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+}
+
+.starts-score i {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 .span-x,
 .span-o {
