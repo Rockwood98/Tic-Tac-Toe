@@ -116,7 +116,7 @@ body {
     font-size: 31.25%;
   }
 }
-@media (max-width: 767px) and (orientation: landscape) {
+@media (max-width: 966px) and (orientation: landscape) {
   .place {
     width: 8rem;
     height: 8rem;
