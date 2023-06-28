@@ -40,9 +40,9 @@ const checkWinner = () => {
     (score[2] === 1 && score[4] === 1 && score[6] === 1)
   ) {
     playing = false;
-    showOverlay('Player');
     playerScore += 1;
     playerScoreText.textContent = playerScore;
+    showOverlay('Player');
     turn = 1;
   } else if (
     (score[0] === 2 && score[1] === 2 && score[2] === 2) ||
@@ -138,7 +138,7 @@ const gameAgain = () => {
   resetSymbol();
   localStorage.setItem('scores', JSON.stringify(scores));
   if (turn === 1) {
-    setTimeout(cpu, 100);
+    setTimeout(cpu, 200);
   }
 };
 const gameReset = () => {
