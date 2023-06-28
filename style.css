@@ -166,5 +166,6 @@ body {
   }
   .starts-score {
     font-size: 1.3rem;
+    margin-bottom: 0.1rem;
   }
 }
