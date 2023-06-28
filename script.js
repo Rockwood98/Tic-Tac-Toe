@@ -18,6 +18,7 @@ let playerScore = 0;
 let cpuScore = 0;
 let cpuEnd = true;
 let scores = [];
+let turn = 0;
 
 // prettier-ignore
 let score = 
@@ -42,6 +43,7 @@ const checkWinner = () => {
     showOverlay('Player');
     playerScore += 1;
     playerScoreText.textContent = playerScore;
+    turn = 1;
   } else if (
     (score[0] === 2 && score[1] === 2 && score[2] === 2) ||
     (score[3] === 2 && score[4] === 2 && score[5] === 2) ||
@@ -56,13 +58,16 @@ const checkWinner = () => {
     cpuScore += 1;
     cpuScoreText.textContent = cpuScore;
     showOverlay('CPU');
+    turn = 0;
   }
   if (gameArr.length === 0 && playing === true) {
     playing = false;
     showOverlay();
+    turn = 0 ? (turn = 1) : (turn = 0);
   }
   scores = [playerScore, cpuScore];
 };
+
 const randomNumber = function () {
   random = gameArr[Math.floor(Math.random() * gameArr.length)];
 };
@@ -101,7 +106,7 @@ const cpu = function () {
   gamePlaces.forEach(place => {
     if (+place.dataset.tab === random) addSymbol(place);
   });
-  symbol = true;
+  turn === 1 ? (symbol = false) : (symbol = true);
   score[random] = 2;
   checkWinner();
   cpuEnd = true;
@@ -114,7 +119,7 @@ const player = function (e) {
     const gamePlace = e.target;
     removeValue(playerNum);
     addSymbol(gamePlace);
-    symbol = false;
+    turn === 0 ? (symbol = false) : (symbol = true);
     score[playerNum] = 1;
     setTimeout(cpu, 500);
   }
@@ -132,6 +137,9 @@ const gameAgain = () => {
   overlay.classList.add('hidden');
   resetSymbol();
   localStorage.setItem('scores', JSON.stringify(scores));
+  if (turn === 1) {
+    setTimeout(cpu, 100);
+  }
 };
 const gameReset = () => {
   gameAgain();
