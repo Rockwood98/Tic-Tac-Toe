@@ -43,7 +43,9 @@ const checkWinner = () => {
     playerScore += 1;
     playerScoreText.textContent = playerScore;
     showOverlay('Player');
-    turn = 1;
+    if (turn === 1) {
+      turn = 0;
+    } else turn = 1;
   } else if (
     (score[0] === 2 && score[1] === 2 && score[2] === 2) ||
     (score[3] === 2 && score[4] === 2 && score[5] === 2) ||
@@ -58,7 +60,9 @@ const checkWinner = () => {
     cpuScore += 1;
     cpuScoreText.textContent = cpuScore;
     showOverlay('CPU');
-    turn = 0;
+    if (turn === 1) {
+      turn = 0;
+    } else turn = 1;
   }
   if (gameArr.length === 0 && playing === true) {
     playing = false;
