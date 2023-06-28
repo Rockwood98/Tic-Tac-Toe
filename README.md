@@ -37,5 +37,4 @@ Author:
 The Tic-Tac-Toe game was created by [Rockwood98]. You can contact me at [wojtekcharemski@gmail.com].
 
 Tic-Tac-Toe:
-https://friendly-dusk-bba12f.netlify.app/
-
+https://o-tic-tac-toe-x.netlify.app/
