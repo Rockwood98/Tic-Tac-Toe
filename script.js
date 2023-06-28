@@ -144,7 +144,7 @@ const gameReset = () => {
 const allResults = () => {
   const oldScores = JSON.parse(localStorage.getItem('scores'));
   playerScore = oldScores ? oldScores[0] : 0;
-  cpuScore = oldScores ? oldScores[0] : 0;
+  cpuScore = oldScores ? oldScores[1] : 0;
   playerScoreText.textContent = playerScore;
   cpuScoreText.textContent = cpuScore;
 };
